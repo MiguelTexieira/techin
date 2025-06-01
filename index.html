@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PE66J7ZYB6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-PE66J7ZYB6');
+    </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Dancing heart yoga will help you become a more healthy and flexible version of yourself. It's tailored to your personal needs."
+    />
+
+    <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" href="img/favicon.png" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -11,15 +33,450 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script defer src="js/script.js"></script>
+
     <title>Dancing Heart Yoga</title>
   </head>
   <body>
-    <div class="container">
-      <div class="content">
-        <img class="logo" alt="Dancing Heart Yoga" src="img/DHLogo.png" />
-        <p class="comingSoon">Coming soon...</p>
+    <header class="header">
+      <a href="#">
+        <img class="logo" alt="Omnifood logo" src="img/DHLogo.png" />
+      </a>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#how">About</a></li>
+          <li><a class="main-nav-link" href="#classes">Classes</a></li>
+          <li>
+            <a class="main-nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li><a class="main-nav-link nav-cta" href="#cta">Let's talk</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">Flow like nobody's watching</h1>
+            <p class="hero-description">
+              Hi, I’m Vendula – a certified Vinyasa Flow yoga teacher with over
+              10 years of experience. I teach in-person yoga in St Albans and
+              the surrounding area, offering group classes, private one-to-one
+              sessions, and workplace yoga for companies who want to support
+              their team’s wellbeing.
+            </p>
+            <a href="#cta" class="btn btn--full margin-right-sm">
+              Get in touch
+            </a>
+
+            <a href="#how" class="btn btn--outline">Learn more &darr;</a>
+          </div>
+          <div class="hero-img-box">
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-min.png" type="image/png" />
+
+              <img
+                src="img/hero-min.png"
+                class="hero-img"
+                alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-how" id="how">
+        <div class="container">
+          <span class="subheading">About</span>
+          <h2 class="heading-secondary">A bit about me</h2>
+          <p class="feature-text">
+            I first found yoga more than ten years ago while looking for a way
+            to stay active and manage stress. What began as a physical practice
+            quickly became something much deeper – a space for reflection,
+            strength, and growth. In 2013, I completed my 200-hour yoga teacher
+            training with Himalaya Yoga Valley Centre in Goa, India. Their
+            training, rooted in classical Hatha and Ashtanga yoga, gave me a
+            strong foundation in alignment, breathwork, and yogic philosophy.
+          </p>
+          <p class="feature-text">
+            Over the years, I’ve continued to study, grow, and share what I
+            learn with others. Teaching Vinyasa Flow is my passion – I love how
+            each practice can be both energising and grounding. My goal is to
+            create classes that are welcoming, inclusive, and adaptable. I
+            believe yoga should meet you where you are, and I’ll always offer
+            options and support to help you feel confident and at ease.
+          </p>
+          <div class="about-img-container">
+            <img
+              src="img/yogagradient.jpg"
+              alt="Yoga gradient"
+              class="yogagradient"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-classes" id="classes">
+        <div class="container">
+          <span class="subheading">Classes</span>
+          <h2 class="heading-secondary">Private One-to-One Sessions</h2>
+          <p class="feature-text">
+            If you’d prefer a more personal approach, I offer private yoga
+            sessions tailored to your individual needs and goals. These are
+            ideal if you're just starting out, working with an injury, or
+            wanting to deepen your practice with focused attention. I’ll design
+            each session just for you – whether you’re looking to build
+            strength, improve flexibility, or find a moment of calm in your busy
+            week.
+          </p>
+          <h2 class="heading-secondary">Group Classes</h2>
+          <p class="feature-text">
+            My group Vinyasa Flow classes are welcoming, energising, and
+            suitable for all levels. We move mindfully through breath-led
+            sequences, building heat and strength while cultivating calm.
+            Whether it’s your first class or your hundredth, you’ll be supported
+            and encouraged to move at your own pace. There’s a lovely sense of
+            community in these classes – people often tell me they come for the
+            yoga and stay for the atmosphere.
+          </p>
+          <h2 class="heading-secondary">Corporate Yoga</h2>
+          <p class="feature-text">
+            I also offer yoga sessions for businesses in and around St Albans.
+            These classes are designed to help teams de-stress, move better, and
+            return to work feeling more focused and refreshed. I bring
+            everything needed and adapt each session to suit the space and team.
+            Whether it’s a one-off wellness day or a regular lunchtime class,
+            I’d love to support your workplace wellbeing.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-testimonials" id="testimonials">
+        <div class="testimonials-container">
+          <span class="subheading">Testimonials</span>
+          <h2 class="heading-secondary">Kind Words from My Students</h2>
+
+          <div class="testimonials">
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Claire, private client"
+                src="img/customers/claire.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Vendula is a brilliant teacher – calm, knowledgeable, and always
+                encouraging. Her classes have helped me build confidence and
+                strength, both physically and mentally.
+              </blockquote>
+              <p class="testimonial-name">&mdash; Claire, private client</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Maya, group class student"
+                src="img/customers/maya.jpg"
+              />
+              <blockquote class="testimonial-text">
+                I always look forward to Vendula’s classes. She creates such a
+                welcoming environment, and the flow leaves me feeling balanced
+                and energised. It’s the best part of my week!
+              </blockquote>
+              <p class="testimonial-name">&mdash; Maya, group class student</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Tom, HR Manager"
+                src="img/customers/steve.jpg"
+              />
+              <blockquote class="testimonial-text">
+                We invited Vendula to teach corporate yoga at our office, and
+                the impact has been amazing. Staff are more relaxed, focused,
+                and genuinely enjoy taking part. She’s professional, friendly,
+                and a joy to work with.
+              </blockquote>
+              <p class="testimonial-name">&mdash; Tom, HR Manager</p>
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-1.jpg" alt="and breathe" />
+            <!-- <figcaption>Caption</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-2.jpg" alt="beeds" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-3.jpg" alt="rocks and water" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-4.jpg" alt="yoga pose in top" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-5.jpg" alt="mystic river" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-6.jpg" alt="yoga on the rocks" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-7.jpg" alt="dandelion in the wind" "
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-8.jpg" alt="yoga pose by the sea" />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-9.jpg"
+              alt="tree with routes and branches"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-10.jpg"
+              alt="guru meditating by the sea"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-11.jpg" alt="leaf" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/gallery/gallery-12.jpg" alt="yoga pose in studio" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-cta" id="cta">
+        <div class="container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <div
+                id="form-submitted-message"
+                class="form-submitted-message-hide"
+              >
+                <h2 class="heading-secondary">You’re all set!</h2>
+                <p class="cta-text">
+                  Thank you for reaching out — I’ll be in touch soon to chat
+                  about your yoga journey.
+                </p>
+              </div>
+
+              <div id="form-main" class="form-main">
+                <h2 class="heading-secondary">
+                  Get your first class for free!
+                </h2>
+                <p class="cta-text">
+                  Nourish your body and mind with refreshing, feel-good yoga
+                  sessions. Start your journey to wellness today! Get in touch
+                  and enjoy your first class on me!
+                </p>
+
+                <form
+                  id="cta-form"
+                  class="cta-form"
+                  name="sign-up"
+                  action="https://formspree.io/f/xdoryzve"
+                  method="POST"
+                  target="_top"
+                >
+                  <div>
+                    <label for="name">Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="John Smith"
+                      name="name"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label for="email">Email</label>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="me@example.com"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="cta-message">
+                    <label for="message">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="I would like to know more about..."
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <button id="submitBtn" class="btn btn--form" type="submit">
+                    <i
+                      id="spinner"
+                      class="fa fa-spinner fa-spin spinner-hide"
+                    ></i>
+                    Send with Intention
+                  </button>
+                  <div id="form-error-message" class="form-error-message-hide">
+                    <h2 class="heading-secondary">
+                      Oops! That didn’t quite work.
+                    </h2>
+                    <p class="cta-text">
+                      Technology’s having a moment. Please try again or drop me
+                      a message at
+                      <a
+                        class="error-message-link"
+                        href="mailto:vpergl@yahoo.co.uk"
+                        >vpergl@yahoo.co.uk</a
+                      >.
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Water color yoga"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img class="logo" alt="Omnifood logo" src="img/DHLogo.png" />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            Copyright &copy; <span class="year">2027</span> by Dancing Heart
+            Yoga. All rights reserved.
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <address class="contacts">
+            <p class="address">310 Hatfield Road, St Albans, AL1 4UN</p>
+            <p>
+              <a class="footer-link" href="tel:0776 606 0498">0776 606 0498</a
+              ><br />
+              <a class="footer-link" href="mailto:vpergl@yahoo.co.uk"
+                >vpergl@yahoo.co.uk</a
+              >
+            </p>
+          </address>
+        </div>
       </div>
-    </div>
+    </footer>
+    <script>
+      var form = document.getElementById('cta-form');
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var data = new FormData(event.target);
+        var spinner = document.getElementById('spinner');
+        var button = document.getElementById('submitBtn');
+        var mainForm = document.getElementById('form-main');
+        var successMessage = document.getElementById('form-submitted-message');
+        var failureMessage = document.getElementById('form-error-message');
+        var cta = document.getElementById('cta');
+        var spinner = document.getElementById('spinner');
+
+        spinner.classList.remove('spinner-hide');
+        button.disabled = true;
+
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: 'application/json',
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              mainForm.classList.add('form-main-hide');
+              successMessage.classList.add('form-submitted-message-show');
+              cta.scrollIntoView({
+                behavior: 'smooth',
+              });
+              form.reset();
+            } else {
+              response.json().then((data) => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data['errors']
+                    .map((error) => error['message'])
+                    .join(', ');
+                } else {
+                  spinner.classList.add('spinner-hide');
+                  button.disabled = false;
+                  failureMessage.classList.add('form-error-message-show');
+                }
+              });
+            }
+          })
+          .catch((error) => {
+            spinner.classList.add('spinner-hide');
+            button.disabled = false;
+            failureMessage.classList.add('form-error-message-show');
+          });
+      }
+      form.addEventListener('submit', handleSubmit);
+    </script>
   </body>
 </html>
