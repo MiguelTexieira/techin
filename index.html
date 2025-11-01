@@ -95,7 +95,7 @@
       .subtitle {
         font-size: clamp(1rem, 3vw, 1.5rem);
         font-weight: 400;
-        margin-bottom: 3rem;
+        margin-bottom: 0;
         color: #94a3b8;
         opacity: 0;
         animation: fadeInUp 1s ease-out 0.6s forwards;
@@ -109,34 +109,10 @@
         animation: wordFadeIn 0.5s ease-out forwards;
       }
 
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 2.5rem;
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: #94a3b8;
-        background: transparent;
-        border: 1px solid rgba(148, 163, 184, 0.3);
-        border-radius: 50px;
-        cursor: pointer;
-        text-decoration: none;
+      .info {
+        margin-top: 6rem;
         opacity: 0;
         animation: fadeInUp 1s ease-out 0.8s forwards;
-        transition: all 0.3s ease;
-      }
-
-      .cta:hover {
-        color: #cbd5e1;
-        border-color: rgba(203, 213, 225, 0.5);
-        background: rgba(148, 163, 184, 0.05);
-      }
-
-      .info {
-        margin-top: 4rem;
-        opacity: 0;
-        animation: fadeInUp 1s ease-out 1s forwards;
       }
 
       .info p {
@@ -220,10 +196,6 @@
       <h1 id="main-heading">Something amazing is coming</h1>
 
       <p class="subtitle" id="subtitle">We're crafting a new digital experience</p>
-
-      <a href="mailto:hello@techin.co.uk" class="cta">
-        Get in Touch
-      </a>
 
       <div class="info">
         <p>Have questions? Reach out to us</p>
