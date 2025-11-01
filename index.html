@@ -49,11 +49,9 @@
         color: #ffffff;
         margin: 0;
         padding: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -224,12 +222,26 @@
     </div>
 
     <script>
+      // Fix viewport height for iOS Safari
+      function setViewportHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      setViewportHeight();
+      window.addEventListener('resize', setViewportHeight);
+      window.addEventListener('orientationchange', setViewportHeight);
+
       // Canvas Animation
       const canvas = document.getElementById('canvas');
       const ctx = canvas.getContext('2d');
 
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      resizeCanvas();
 
       // Particle system
       const particles = [];
@@ -303,8 +315,8 @@
 
       // Handle window resize
       window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        setViewportHeight();
+        resizeCanvas();
       });
 
       // Animated text effect
