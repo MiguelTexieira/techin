@@ -19,443 +19,340 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="description"
-      content="Affordable web design for small businesses, freelancers, and local shops. Get a custom website with cheap hosting and domain services—no hassle, just results."
+      content="Techin - Coming Soon"
     />
-
-    <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" href="img/favicon.png" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/queries.css" />
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule=""
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      defer
-      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
-    ></script>
-    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>Techin</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        color: #ffffff;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        margin-bottom: 3rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.2s forwards;
+      }
+
+      .logo img {
+        max-width: 200px;
+        height: auto;
+        filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.3));
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #4a90e2 0%, #63b3ed 50%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.4s forwards;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        font-weight: 400;
+        margin-bottom: 3rem;
+        color: #94a3b8;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.6s forwards;
+        letter-spacing: 0.02em;
+      }
+
+      .word {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: wordFadeIn 0.5s ease-out forwards;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.8s forwards;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+        background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+      }
+
+      .info {
+        margin-top: 4rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 1s forwards;
+      }
+
+      .info p {
+        font-size: 0.95rem;
+        color: #64748b;
+        margin-bottom: 0.5rem;
+      }
+
+      .info a {
+        color: #4a90e2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .info a:hover {
+        color: #63b3ed;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        from {
+          transform: translateY(30px);
+        }
+      }
+
+      @keyframes wordFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        h1 {
+          margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+          margin-bottom: 2rem;
+        }
+
+        .logo {
+          margin-bottom: 2rem;
+        }
+
+        .logo img {
+          max-width: 150px;
+        }
+
+        .cta {
+          padding: 0.875rem 2rem;
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <a href="#">
-        <img class="logo" alt="Techin Logo" src="img/TechinLogo.png" />
+    <canvas id="canvas"></canvas>
+
+    <div class="container">
+      <div class="logo">
+        <img src="img/TechinLogo.png" alt="Techin Logo" />
+      </div>
+
+      <h1 id="main-heading">Something amazing is coming</h1>
+
+      <p class="subtitle" id="subtitle">We're crafting a new digital experience</p>
+
+      <a href="mailto:hello@techin.co.uk" class="cta">
+        Get in Touch
       </a>
 
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#how">What we offer</a></li>
-          <li>
-            <a class="main-nav-link" href="#classes">How We Can Help You</a>
-          </li>
-          <li>
-            <a class="main-nav-link" href="#testimonials">Testimonials</a>
-          </li>
-          <li><a class="main-nav-link nav-cta" href="#cta">Let's talk</a></li>
-        </ul>
-      </nav>
-
-      <button class="btn-mobile-nav">
-        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
-        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
-      </button>
-    </header>
-
-    <main>
-      <section class="section-hero">
-        <div class="hero">
-          <div class="hero-text-box">
-            <h1 class="heading-primary">
-              Affordable Web Design That Works for You
-            </h1>
-            <p class="hero-description">
-              Need a sleek, modern website without the sky-high price tag? We’ve
-              got you covered. Whether you're a small business, startup,
-              freelancer, or just getting your brand online—we offer web design
-              services that look great and perform even better.
-            </p>
-            <a href="#cta" class="btn btn--full margin-right-sm">
-              Get in touch
-            </a>
-
-            <a href="#how" class="btn btn--outline">Learn more &darr;</a>
-          </div>
-          <div class="hero-img-box">
-            <picture>
-              <source srcset="img/hero.webp" type="image/webp" />
-              <source srcset="img/hero-min.png" type="image/png" />
-
-              <img
-                src="img/hero-min.png"
-                class="hero-img"
-                alt="Responsive layouts, code snipper, and a wireframe being drawn up"
-              />
-            </picture>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-how" id="how">
-        <div class="container">
-          <span class="subheading">What We Offer</span>
-          <h2 class="heading-secondary">Custom Web Design</h2>
-          <p class="feature-text">
-            We create beautiful, responsive websites tailored to your brand and
-            goals. No cookie-cutter templates—just clean, effective design that
-            gets results.
-          </p>
-          <h2 class="heading-secondary">Budget-Friendly Packages</h2>
-          <p class="feature-text">
-            From one-pagers to full eCommerce sites, we have pricing that works
-            with your budget. Get quality without compromise.
-          </p>
-          <h2 class="heading-secondary">Cheap Hosting & Domain Services</h2>
-          <p class="feature-text">
-            No need to shop around. We provide reliable hosting and domain
-            registration at some of the lowest prices you'll find—simple, fast,
-            and all in one place.
-          </p>
-          <h2 class="heading-secondary">Fast Turnaround</h2>
-          <p class="feature-text">
-            Need a site up ASAP? We deliver high-quality work quickly—so you can
-            focus on what you do best.
-          </p>
-          <h2 class="heading-secondary">Ongoing Support</h2>
-          <p class="feature-text">
-            We don’t disappear after launch. Need updates? Want help with SEO?
-            We’re here when you need us.
-          </p>
-        </div>
-      </section>
-
-      <section class="section-classes" id="classes">
-        <div class="container">
-          <span class="subheading">How We Can Help You</span>
-          <h2 class="heading-secondary">Your Website, Made Simple</h2>
-          <p class="feature-text">
-            Whether you’re launching a new business, showcasing your freelance
-            work, promoting a local shop or restaurant, or starting a personal
-            blog—our affordable web design services are built to support your
-            goals. We’ll help you create a professional, mobile-friendly website
-            that reflects your brand, engages your audience, and fits your
-            budget. From clean portfolios to simple sites with menus and contact
-            info, we make the entire process easy—from design and setup to
-            hosting and domain registration. No tech stress, just great results.
-          </p>
-        </div>
-      </section>
-
-      <section class="section-testimonials" id="testimonials">
-        <div class="testimonials-container">
-          <span class="subheading">Testimonials</span>
-          <h2 class="heading-secondary">What Our Clients Are Saying</h2>
-
-          <div class="testimonials">
-            <figure class="testimonial">
-              <img
-                class="testimonial-img"
-                alt="Photo of customer Claire"
-                src="img/customers/claire.jpg"
-              />
-              <blockquote class="testimonial-text">
-                I needed a website to launch my small business but didn’t know
-                where to start. They took care of everything—from design to
-                hosting—and made the process so easy. I couldn’t believe how
-                affordable it was!
-              </blockquote>
-              <p class="testimonial-name">&mdash; Claire O.</p>
-            </figure>
-
-            <figure class="testimonial">
-              <img
-                class="testimonial-img"
-                alt="Photo of customer Maya"
-                src="img/customers/maya.jpg"
-              />
-              <blockquote class="testimonial-text">
-                I’ve worked with other web designers before, but this was by far
-                the easiest experience. They were responsive, quick, and really
-                affordable. I finally have a site I’m proud to send clients to.
-              </blockquote>
-              <p class="testimonial-name">&mdash; Nina K.</p>
-            </figure>
-
-            <figure class="testimonial">
-              <img
-                class="testimonial-img"
-                alt="Photo of customer Tom"
-                src="img/customers/steve.jpg"
-              />
-              <blockquote class="testimonial-text">
-                I was surprised at how smooth everything was. I gave a rough
-                idea of what I wanted, and they brought it to life perfectly.
-                The price was fair, the site looks amazing, and I’ve already had
-                great feedback from customers.
-              </blockquote>
-              <p class="testimonial-name">&mdash; Tom</p>
-            </figure>
-          </div>
-        </div>
-
-        <div class="gallery">
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-1.jpg" alt="high tech office" />
-            <!-- <figcaption>Caption</figcaption> -->
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-2.jpg" alt="hacker binary" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-3.jpg" alt="phones and tablets" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-4.jpg" alt="scary hacker" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-5.jpg" alt="cool lights" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-6.jpg" alt="html code snippet" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-7.jpg" alt="connected keyboard" " />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-8.jpg" alt="web design" />
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="img/gallery/gallery-9.jpg"
-              alt="laptop with cool colours"
-            />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-10.jpg" alt="glowing network" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-11.jpg" alt="lift off" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="img/gallery/gallery-12.jpg" alt="a day in the office" />
-          </figure>
-        </div>
-      </section>
-
-      <section class="section-cta" id="cta">
-        <div class="container">
-          <div class="cta">
-            <div class="cta-text-box">
-              <div
-                id="form-submitted-message"
-                class="form-submitted-message-hide"
-              >
-                <h2 class="heading-secondary">Thanks!</h2>
-                <p class="cta-text">
-                  Your message has been sent. We’ll be in touch shortly!
-                </p>
-              </div>
-
-              <div id="form-main" class="form-main">
-                <h2 class="heading-secondary">Let’s Get Your Website Online</h2>
-                <p class="cta-text">
-                  It’s never been easier to get a stunning website without
-                  breaking the bank. Reach out today for a free quote or to chat
-                  about your project—we’re ready when you are.
-                </p>
-
-                <form
-                  id="cta-form"
-                  class="cta-form"
-                  name="sign-up"
-                  action="https://formspree.io/f/meokgrza"
-                  method="POST"
-                  target="_top"
-                >
-                  <div>
-                    <label for="name">Name</label>
-                    <input
-                      id="name"
-                      type="text"
-                      placeholder="John Smith"
-                      name="name"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label for="email">Email</label>
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="me@example.com"
-                      name="email"
-                      required
-                    />
-                  </div>
-
-                  <div class="cta-message">
-                    <label for="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="I would like to know more about..."
-                      rows="5"
-                      required
-                    ></textarea>
-                  </div>
-                  <button id="submitBtn" class="btn btn--form" type="submit">
-                    <i
-                      id="spinner"
-                      class="fa fa-spinner fa-spin spinner-hide"
-                    ></i>
-                    Send Message
-                  </button>
-                  <div id="form-error-message" class="form-error-message-hide">
-                    <h2 class="heading-secondary">Oops!</h2>
-                    <p class="cta-text">
-                      Something went wrong. Please check your details and try
-                      again—or email us directly at
-                      <a
-                        class="error-message-link"
-                        href="mailto:hello@techin.co.uk"
-                        >hello@techin.co.uk</a
-                      >.
-                    </p>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div
-              class="cta-img-box"
-              role="img"
-              aria-label="Water color yoga"
-            ></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container grid grid--footer">
-        <div class="logo-col">
-          <a href="#" class="footer-logo">
-            <img class="logo" alt="Omnifood logo" src="img/TechinLogo.png" />
-          </a>
-
-          <ul class="social-links">
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
-              ></a>
-            </li>
-          </ul>
-
-          <p class="copyright">
-            Copyright &copy; <span class="year">2027</span> by Techin. All
-            rights reserved.
-          </p>
-        </div>
-
-        <div class="address-col">
-          <p class="footer-heading">Contact us</p>
-          <address class="contacts">
-            <p class="address">310 Hatfield Road, St Albans, AL1 4UN</p>
-            <p>
-              <a class="footer-link" href="tel:0776 595 0473">0776 595 0473</a
-              ><br />
-              <a class="footer-link" href="mailto:hello@techin.co.uk"
-                >hello@techin.co.uk</a
-              >
-            </p>
-          </address>
-        </div>
+      <div class="info">
+        <p>Have questions? Reach out to us</p>
+        <p><a href="mailto:hello@techin.co.uk">hello@techin.co.uk</a></p>
       </div>
-    </footer>
+    </div>
+
     <script>
-      var form = document.getElementById('cta-form');
+      // Canvas Animation
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
 
-      async function handleSubmit(event) {
-        event.preventDefault();
-        var data = new FormData(event.target);
-        var spinner = document.getElementById('spinner');
-        var button = document.getElementById('submitBtn');
-        var mainForm = document.getElementById('form-main');
-        var successMessage = document.getElementById('form-submitted-message');
-        var failureMessage = document.getElementById('form-error-message');
-        var cta = document.getElementById('cta');
-        var spinner = document.getElementById('spinner');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-        spinner.classList.remove('spinner-hide');
-        button.disabled = true;
+      // Particle system
+      const particles = [];
+      const particleCount = 80;
+      const connectionDistance = 150;
 
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            Accept: 'application/json',
-          },
-        })
-          .then((response) => {
-            if (response.ok) {
-              mainForm.classList.add('form-main-hide');
-              successMessage.classList.add('form-submitted-message-show');
-              cta.scrollIntoView({
-                behavior: 'smooth',
-              });
-              form.reset();
-            } else {
-              response.json().then((data) => {
-                if (Object.hasOwn(data, 'errors')) {
-                  status.innerHTML = data['errors']
-                    .map((error) => error['message'])
-                    .join(', ');
-                } else {
-                  spinner.classList.add('spinner-hide');
-                  button.disabled = false;
-                  failureMessage.classList.add('form-error-message-show');
-                }
-              });
-            }
-          })
-          .catch((error) => {
-            spinner.classList.add('spinner-hide');
-            button.disabled = false;
-            failureMessage.classList.add('form-error-message-show');
-          });
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = (Math.random() - 0.5) * 0.5;
+          this.radius = Math.random() * 2 + 1;
+          this.opacity = Math.random() * 0.5 + 0.3;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(74, 144, 226, ${this.opacity})`;
+          ctx.fill();
+        }
       }
-      form.addEventListener('submit', handleSubmit);
+
+      // Initialize particles
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update and draw particles
+        particles.forEach(particle => {
+          particle.update();
+          particle.draw();
+        });
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < connectionDistance) {
+              const opacity = (1 - distance / connectionDistance) * 0.3;
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(74, 144, 226, ${opacity})`;
+              ctx.lineWidth = 1;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      // Animated text effect
+      function animateText(elementId) {
+        const element = document.getElementById(elementId);
+        const text = element.textContent;
+        element.innerHTML = '';
+
+        const words = text.split(' ');
+        words.forEach((word, index) => {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = word + ' ';
+          span.style.animationDelay = `${0.4 + index * 0.1}s`;
+          element.appendChild(span);
+        });
+      }
+
+      animateText('main-heading');
+
+      // Mouse interaction
+      let mouse = { x: 0, y: 0 };
+
+      canvas.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+
+        particles.forEach(particle => {
+          const dx = mouse.x - particle.x;
+          const dy = mouse.y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            const force = (100 - distance) / 100;
+            particle.vx -= (dx / distance) * force * 0.2;
+            particle.vy -= (dy / distance) * force * 0.2;
+          }
+        });
+      });
     </script>
   </body>
 </html>
